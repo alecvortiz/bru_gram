@@ -1,0 +1,14 @@
+<h1> Make Your Profile! </h1>
+
+<%= form_for @user do |f| %>
+
+	<p> 
+		<%= f.label "Name" %><br>
+		<%= f.text_field :user_name %>
+	</p>
+
+	<p>
+		<%= f.submit %>
+	</p>
+
+<% end %>

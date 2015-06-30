@@ -1,12 +1,13 @@
-
- 
 <p>
   <strong>Comment:</strong>
   <%= comment.body %>
 </p>
 
-<p>
-	 <%= link_to 'Destroy Comment', [@photo, comment],
+<% if @photo.user == current_user %>
+	<p>
+		 <%= link_to 'Edit Comment', edit_photo_comment_path(@photo, comment) %>
+		 <%= link_to 'Destroy Comment', [@photo, comment],
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
-</p>
+	</p>
+<% end %>

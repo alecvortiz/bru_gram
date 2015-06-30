@@ -1,4 +1,4 @@
-<%= form_for ([@user, @cost]) do |f| %>
+<%= form_for ([current_user, @cost]) do |f| %>
 	<p> 
 		<%= f.label "Name" %><br>
 		<%= f.text_field :name %>

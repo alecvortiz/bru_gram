@@ -1,14 +1,14 @@
-<h1> Hello <%= @user.user_name %> </h1>
+<h1> Your Costs </h1>
 
-<%= link_to 'Craft', new_user_cost_path(@user) %>
+<%= link_to 'New Cost', new_user_cost_path(current_user) %>
 
 <table>
 	<% @costs.each do |cost| %>
 		<tr>
 			<td><%= cost.name %> | </td>
-			<td><%= link_to 'Show Cost', user_cost_path(@user, cost) %> | </td>	
-			<td><%= link_to 'Edit Cost', edit_user_cost_path(@user, cost) %> | </td>
-			<td><%= link_to 'Destroy Cost', [@user, cost],
+			<td><%= link_to 'Show Cost', user_cost_path(current_user, cost) %> | </td>	
+			<td><%= link_to 'Edit Cost', edit_user_cost_path(current_user, cost) %> | </td>
+			<td><%= link_to 'Destroy Cost', [current_user, cost],
 							method: :delete,
 							data: { confirm: 'Are you sure?' } %></td>
 		</tr>

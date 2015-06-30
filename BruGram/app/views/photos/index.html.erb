@@ -6,7 +6,6 @@
 	<% @photos.each do |photo| %>
 		<tr>
 			<td><%= photo.caption %> | </td>
-			<td><%= photo.public %> | </td>
 			<td><%= link_to 'Show Photo', user_photo_path(current_user, photo) %> | </td>	
 			<td><%= link_to 'Edit Photo', edit_user_photo_path(current_user, photo) %> | </td>
 			<td><%= link_to 'Destroy Photo', [current_user, photo],

@@ -1,0 +1,24 @@
+<h1> Image Feed </h1>
+
+<%= link_to 'My Photos', controller: 'photos' %>
+
+<table>
+	<tr>
+		<th>Caption</th>
+		<th>Image</th>
+		<th colspan="2"></th>
+	</tr>
+
+	<% @photos.each do |photo| %>
+	<% if photo.public %>
+		<tr>
+			<td><%= photo.caption %></td>
+			<td><%= link_to 'Show', photo_path(photo) %></td>
+			<td><%= link_to 'Edit', edit_photo_path(photo) %></td>
+			<td><%= link_to 'Destroy', photo_path(photo),
+				method: :delete,
+				data: { confirm: 'Are you sure?' } %></td>
+		</tr>
+		<% end %>
+	<% end %>
+</table>

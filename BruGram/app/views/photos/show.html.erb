@@ -1,0 +1,13 @@
+<h1> Show Photo </h1>
+
+<p> <%= @photo.caption %> </p>
+
+<P> <img class="photo" src= <%= @photo.image %> ></a><%= %> </p>
+
+<h2>Comments</h2>
+<%= render @photo.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+
+<%= link_to 'Back', photos_path %>

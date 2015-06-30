@@ -1,0 +1,23 @@
+<h1> Add New Photo </h1>
+
+<%= form_for ([@user, @user.photos.build]) do |f| %>
+	<p> 
+		<%= f.label "Image" %><br>
+		<%= f.text_field :image %>
+	</p>
+	<p> 
+		<%= f.label "Caption" %><br>
+		<%= f.text_field :caption %>
+	</p>
+	<p> 
+		<%= f.label "Public" %><br>
+		<%= f.text_field :public %>
+	</p>
+	
+	<p>
+		<%= f.submit %>
+	</p>
+
+<% end %>
+
+<td><%= link_to 'Back', "/" %> </td>
